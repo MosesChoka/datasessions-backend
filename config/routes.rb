@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :blogs
+
   get 'pages/About'
   get 'pages/Lessons'
   get 'pages/Podcasts'
