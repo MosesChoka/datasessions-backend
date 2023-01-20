@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <%= link_to "DataSessions", pages_Home_path, class:"navbar-brand"%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +20,14 @@
         <li class="nav-item">
           <%= link_to "Podcasts", pages_Podcasts_path, class:"nav-link active" %>
         </li>
+
+        <% if user_signed_in? %>
+          <li><%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link active" %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link active" %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path, class:"nav-link active" %></li>
+          <li><%= link_to "Login", new_user_session_path, class:"nav-link active" %></li>
+        <% end %>
       </ul>
     </div>
   </div>
