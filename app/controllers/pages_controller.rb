@@ -14,5 +14,6 @@ class PagesController < ApplicationController
 
   def Community
   end
+
   
 end

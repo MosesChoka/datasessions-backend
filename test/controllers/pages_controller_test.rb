@@ -25,4 +25,6 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     get pages_Sign-Up_url
     assert_response :success
   end
+
 end
+
