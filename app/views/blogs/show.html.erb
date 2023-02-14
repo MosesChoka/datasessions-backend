@@ -2,11 +2,8 @@
 
 <%= render @blog %>
 
-<div>
-  <% if @blog.user == current_user %>
-    <%= link_to 'Edit', edit_blog_path(@blog) %>
-    <%= button_to 'Delete blog', @log, method: :delete%>
-  <%end%>
-  <%= link_to 'Back to Blogs', blogs_path%>
-  
-</div>
+<% if @blog.user == current_user %>
+  <%= link_to 'Edit', edit_blog_path%>
+<%end%>
+<%= link_to 'Back to Blogs', blogs_path%>
+

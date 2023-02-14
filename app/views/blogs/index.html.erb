@@ -8,10 +8,9 @@
     <p>
       <%= link_to "Show this blog", blog %>
     </p>
-
     <% if blog.user == current_user %>
-      <td><% link_to 'Edit', edit_blog_path(blog)%></td>
-      <td><% link_to 'Delete', blog, method: :delete, data: {confirm: 'Are you sure?'}%></td>
+      <%= link_to "Edit", edit_blog_path(blog) %>
+      <%= button_to 'Delete', blog, method: :delete %>
     <%end%>
   <% end %>
 </div>
